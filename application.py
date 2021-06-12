@@ -1,7 +1,7 @@
 import discord
 import os
 client = discord.Client()
-if not os.environ.get("PRODUCTION"):
+if not os.environ.get("discord_bot_token"):
     from dotenv import load_dotenv
     load_dotenv()
 

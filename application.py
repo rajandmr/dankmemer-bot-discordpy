@@ -1,7 +1,12 @@
 import discord
 import os
 client = discord.Client()
-token = os.environ.get('discord_bot_token')
+if not os.environ.get("PRODUCTION"):
+    from dotenv import load_dotenv
+    load_dotenv()
+
+token = os.getenv('discord_bot_token')
+# token = os.environ.get('discord_bot_token')
 
 
 @client.event

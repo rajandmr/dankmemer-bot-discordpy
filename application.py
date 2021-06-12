@@ -1,15 +1,16 @@
+from dotenv import load_dotenv
 import discord
 import os
 client = discord.Client()
-from dotenv import load_dotenv
 load_dotenv()
 
-token = os.environ.get('discord_bot_token')
+token = os.getenv('discord_bot_token')
 
 
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
+
 
 @client.event
 async def on_message(message):
